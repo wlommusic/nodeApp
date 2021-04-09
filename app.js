@@ -12,9 +12,9 @@ const blogRoutes =  require('./routes/blogRoutes')
 const app = express();
 
 //mongo connection
-const uri =
+const MONGODB_URI =
   "mongodb+srv://dipta:panda123@nodeapp.p3coa.mongodb.net/nodeApp?retryWrites=true&w=majority";
-mongoose.connect(uri,{useNewUrlParser:true,useUnifiedTopology:true,})
+mongoose.connect(MONGODB_URI,{useNewUrlParser:true,useUnifiedTopology:true,})
   .then(result=> app.listen(3000))
   .catch(err=> console.log(err));
 

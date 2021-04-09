@@ -3,8 +3,6 @@
 <%- include('./partials/head.ejs')%>
 <body>
 <%- include('./partials/nav.ejs')%>
-<script src="" async defer></script>
-</body>
 <h1>Medium link Bypasser</h1>
 <p class='home-p'>Works best on Chromimum based browsers</p>
 <p class='home-p'>Make sure your Ad blockers are turned off</p>
@@ -12,10 +10,25 @@
 <div class='home-div'>Put the link you want bypassed inside the textbox. Then press the submit button</div>
 <p>please wait around 10-30 seconds for you link to be bypassed</p>
 <br>
-<form action="">
-    <label for="link">Input link here</label><br>
-    <input type="text" id="link" name="link" value="Waiting..."><br>
-    <input type="submit" value="Submit">
+<form id="to_link" class='form'>
+    <input type="text" id ='out-link'placeholder="link...." />
+    <input type="submit" value='submit'>
+    <div class="feedback"></div>
 </form>
+<div id="output">
+<a href="">link</a>
+</div>
+</body>
 <%- include('./partials/footer.ejs')%>
+<script>
+    const addForm = document.querySelector(".form");
+    const link =  document.querySelector("#out-link");
+    const feedback = document.querySelector('.feedback');
+        addForm.addEventListener("submit", (e)=> {
+            e.preventDefault();
+            console.log(link.value);
+
+        });
+    
+</script>
 </html>
